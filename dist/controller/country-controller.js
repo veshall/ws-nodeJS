@@ -12,16 +12,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getOcProducts = void 0;
-const product_service_1 = require("../services/product-service");
+exports.getOcCountries = void 0;
+const country_service_1 = require("../services/country-service");
 const apiResponse_1 = __importDefault(require("../utils/apiResponse"));
-const getOcProducts = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const getOcCountries = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    console.log('hello');
     try {
-        const products = yield (0, product_service_1.getProducts)();
-        return apiResponse_1.default.Success(res, "products retrived successfully!", 200, products);
+        const countries = yield (0, country_service_1.getocCountries)();
+        return apiResponse_1.default.Success(res, "countries retrived successfully!", 200, countries);
     }
     catch (error) {
-        console.log(error);
+        console.error(error);
     }
 });
-exports.getOcProducts = getOcProducts;
+exports.getOcCountries = getOcCountries;

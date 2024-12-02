@@ -15,6 +15,5 @@ const app = (0, express_1.default)();
 // routes
 app.use('/', product_routes_1.default);
 app.listen(PORT, () => {
-    console.log('hello');
     console.log(`server is running on PORT:`, PORT);
 });

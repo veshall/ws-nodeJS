@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
 import { getProducts } from "../services/product-service";
 import apiResponse from "../utils/apiResponse";
-// import { OK } from 'http-status';
 
 const getOcProducts = async(req: Request , res: Response)=>{
     try {

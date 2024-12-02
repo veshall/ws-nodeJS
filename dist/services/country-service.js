@@ -8,20 +8,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getOcProducts = void 0;
-const product_service_1 = require("../services/product-service");
-const apiResponse_1 = __importDefault(require("../utils/apiResponse"));
-const getOcProducts = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    try {
-        const products = yield (0, product_service_1.getProducts)();
-        return apiResponse_1.default.Success(res, "products retrived successfully!", 200, products);
-    }
-    catch (error) {
-        console.log(error);
-    }
+exports.getocCountries = void 0;
+const oc_country_1 = require("../model/define/oc_country");
+const getocCountries = () => __awaiter(void 0, void 0, void 0, function* () {
+    const allCountries = yield oc_country_1.ocCountry.findAll({
+        attributes: { exclude: ['address_format'] },
+        limit: 2,
+        offset: 10
+    });
+    return { allCountries };
 });
-exports.getOcProducts = getOcProducts;
+exports.getocCountries = getocCountries;
