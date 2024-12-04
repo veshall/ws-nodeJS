@@ -8,17 +8,20 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getProducts = void 0;
-const oc_products_1 = require("../model/class-based/oc_products");
-const getProducts = () => __awaiter(void 0, void 0, void 0, function* () {
-    const allproductsData = yield oc_products_1.ocProduct.findAll({
-        attributes: [
-            'product_id',
-            'price'
-        ],
-        limit: 20
-    });
-    return { allproductsData };
+exports.getCustomersData = void 0;
+const customer_service_1 = require("../services/customer-service");
+const apiResponse_1 = __importDefault(require("../utils/apiResponse"));
+const getCustomersData = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const customers = yield (0, customer_service_1.getCustomerAddressService)();
+        return apiResponse_1.default.Success(res, "products retrived successfully!", 200, customers);
+    }
+    catch (error) {
+        console.log(error);
+    }
 });
-exports.getProducts = getProducts;
+exports.getCustomersData = getCustomersData;

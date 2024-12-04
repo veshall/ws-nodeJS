@@ -16,7 +16,6 @@ exports.getOcCountries = void 0;
 const country_service_1 = require("../services/country-service");
 const apiResponse_1 = __importDefault(require("../utils/apiResponse"));
 const getOcCountries = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    console.log('hello');
     try {
         const countries = yield (0, country_service_1.getocCountries)();
         return apiResponse_1.default.Success(res, "countries retrived successfully!", 200, countries);

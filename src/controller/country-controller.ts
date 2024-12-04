@@ -3,8 +3,6 @@ import { getocCountries } from "../services/country-service";
 import apiResponse from "../utils/apiResponse";
 
 const getOcCountries= async(req:Request, res: Response)=>{
-
-    console.log('hello')
     try {
         const countries = await getocCountries();
         return apiResponse.Success(

@@ -1,4 +1,4 @@
-import { ocProduct } from "../model/oc_products"
+import { ocProduct } from "../model/class-based/oc_products"
 
 export const getProducts = async()=>{
     const allproductsData = await ocProduct.findAll({

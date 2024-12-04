@@ -9,16 +9,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getProducts = void 0;
-const oc_products_1 = require("../model/class-based/oc_products");
-const getProducts = () => __awaiter(void 0, void 0, void 0, function* () {
-    const allproductsData = yield oc_products_1.ocProduct.findAll({
-        attributes: [
-            'product_id',
-            'price'
-        ],
-        limit: 20
+exports.getCustomerAddressService = void 0;
+const oc_customer_1 = require("../model/class-based/oc_customer");
+const getCustomerAddressService = () => __awaiter(void 0, void 0, void 0, function* () {
+    const customerDetails = yield oc_customer_1.ocCustomer.findAll({
+        attributes: ['customer_id', 'email'],
+        limit: 8,
+        offset: 100
     });
-    return { allproductsData };
+    return { customerDetails };
 });
-exports.getProducts = getProducts;
+exports.getCustomerAddressService = getCustomerAddressService;

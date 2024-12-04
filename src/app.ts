@@ -2,7 +2,7 @@ import express from 'express';
 import { initModels } from './model/init-models';
 import { sequelize } from './database/sequelize';
 import productRoutes from "./routes/product-routes"
-
+import commonRoutes from "./routes/common_routes"
 
 const PORT = process.env.PORT || 3001
 
@@ -15,6 +15,7 @@ initModels(sequelize)
 
 // routes
 app.use('/', productRoutes)
+app.use('/', commonRoutes)
 
 
 app.listen(PORT,()=>{

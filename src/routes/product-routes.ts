@@ -7,4 +7,4 @@ const router = express.Router();
 router.get("/api/products", getOcProducts as any)
 router.get("/api/countries", getOcCountries as any)
 
-export default router
+export default router;
