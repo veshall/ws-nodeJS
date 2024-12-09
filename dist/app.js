@@ -11,7 +11,7 @@ const common_routes_1 = __importDefault(require("./routes/common_routes"));
 const PORT = process.env.PORT || 3001;
 const app = (0, express_1.default)();
 // app.use(cors())
-// app.use(express.json())
+app.use(express_1.default.json());
 (0, init_models_1.initModels)(sequelize_1.sequelize);
 // routes
 app.use('/', product_routes_1.default);

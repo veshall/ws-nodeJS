@@ -7,7 +7,8 @@ export interface ocCustomerAttributes {
     email: string,
     telephone?: string,
     password: string,
-    wishlist?: string
+    wishlist?: string,
+    live_id?: string
 }
 
 type ocCustomerOptionalAttributes = 'customer_id' | 'wishlist';
@@ -21,7 +22,8 @@ export class ocCustomer extends Model<ocCustomerAttributes, ocCustomerCreationAt
     email!: string;
     telephone?: string;
     password!: string;
-    wishlist?: string
+    wishlist?: string;
+    live_id?: string
 
     static initModel(sequelize: Sequelize): typeof ocCustomer{
         return ocCustomer.init({

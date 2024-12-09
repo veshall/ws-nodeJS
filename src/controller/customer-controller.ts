@@ -18,4 +18,4 @@ const getCustomersData = async(req: Request,res: Response)=>{
        } 
 }
 
-export { getCustomersData };
+export { getCustomersData };                                
